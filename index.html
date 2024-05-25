@@ -8,22 +8,25 @@
 </head>
 <body>
     <div class="buttons">
-        <button onclick="showToast()">Success</button>
-        <button onclick="showToast()">Error</button>
-        <button onclick="showToast()">Invaild</button>
+        <button onclick="showToast(successMsg)">Success</button>
+        <button onclick="showToast(errorMsg)">Error</button>
+        <button onclick="showToast(invaildMsg)">Invaild</button>
     </div>
 
     <div id="toastBox"></div>
 
     <script>
 
-        let toastBox = document.getElementById('toastBox')
+        let toastBox = document.getElementById('toastBox');
+        let successMsg = 'Successfully submitted';
+        let errorMsg = 'Please fix the error!';
+        let invaildMsg = 'Invaild input, check again';
 
         function showToast(){
            let toast = document.createElement('div');
            toast.classList.add('toast');
            toast.innerHTML = 'success';
-           toastBox.appenchild()
+           toastBox.appendChild(toast);
         }
 
     </script>
